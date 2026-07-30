@@ -65,7 +65,11 @@ button, input, textarea { font: inherit; }
         );
 }
 
-.hero-inner { width: 100%; }
+.hero-inner {
+    position: relative;
+    width: min(calc(100% - 40px), var(--container));
+    margin-inline: auto;
+}
 .hero-content { max-width: 720px; padding-top: 80px; }
 .eyebrow { margin-bottom: 16px; color: var(--accent); text-transform: uppercase; letter-spacing: .19em; font-size: .78rem; font-weight: 800; }
 .hero .eyebrow { color: #ffc680; }
@@ -176,6 +180,7 @@ footer { padding: 80px 0 28px; background: #17130f; color: rgba(255,255,255,.78)
 
 @media (max-width: 620px) {
     .container { width: min(calc(100% - 28px), var(--container)); }
+    .hero-inner { width: min(calc(100% - 28px), var(--container)); }
     .hero { min-height: 700px; height: auto; padding: 120px 0 70px; text-align: left; background-position: 62% center; }
     .hero-content { padding-top: 0; }
     .hero h1 { font-size: clamp(2.8rem, 13vw, 4rem); line-height: 1; }
